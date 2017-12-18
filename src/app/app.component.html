@@ -1,0 +1,10 @@
+<nav>
+  <ul class="main-nav">
+    <li><a [routerLink]="['/']">Angular AWS Amplify</a></li>
+    <li><a [routerLink]="['/']">Home</a></li>
+    <li *ngIf="!(auth.loggedIn | async)"><a [routerLink]="['/login']">Login</a></li>
+    <li *ngIf="(auth.loggedIn | async)"><a (click)="onClickLogout()">Logout</a></li>
+    <li><a [routerLink]="['/signup']">SignUp</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
