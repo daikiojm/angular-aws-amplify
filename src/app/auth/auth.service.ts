@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import { map, tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
-import Amplify, { Auth } from 'aws-amplify';
+import Amplify, { Auth, Signer } from 'aws-amplify';
 import { environment } from './../../environments/environment';
 
 @Injectable()
@@ -63,5 +63,10 @@ export class AuthService {
         },
         error => console.log(error)
       );
+  }
+
+  /** get credentials */
+  public getCurrentUserCredentials(): Observable<any> {
+    return fromPromise(Auth.currentCredentials());
   }
 }

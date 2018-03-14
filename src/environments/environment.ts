@@ -6,6 +6,17 @@ export const environment = {
       region: 'ap-northeast-1',
       userPoolId: 'ap-northeast-1_xxxxxxxxx',
       userPoolWebClientId: 'xxxxxxxxxxxxxxxxxxxxxxxxx'
+    },
+    API: {
+      endpoints: [
+        {
+            name: 'Test',
+            endpoint: 'https://xxxxxxxx.execute-api.ap-northeast-1.amazonaws.com/dev'
+        }
+      ]
     }
+  },
+  api: {
+    endpoint: 'https://xxxxxxxx.execute-api.ap-northeast-1.amazonaws.com/dev'
   }
 };
